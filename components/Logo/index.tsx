@@ -8,14 +8,9 @@ type LogoProps = {
 };
 
 const Logo = ({ className }: LogoProps) => (
-  <Link href='/'>
+  <Link href="/">
     <div className={cn(styles.logo, className)}>
-      <Image
-        src='/images/gainxlogo.png'
-        width='200'
-        height='100'
-        alt='AstroClash'
-      />
+      {/* <Image src="/images.png" width="200" height="100" alt="AstroClash" /> */}
     </div>
   </Link>
 );

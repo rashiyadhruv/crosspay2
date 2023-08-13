@@ -29,6 +29,7 @@ const Exchange = () => {
   //   }, []);
   const [address, setAddress] = useState("");
   const [amount, setAmount] = useState();
+  const [chain, setChain] = useState("ETH"); // ["BSC", "ETH"
   const [loading, setLoading] = useState(false);
   return (
     <div className={styles.wrap}>
@@ -49,6 +50,17 @@ const Exchange = () => {
           onChange={(e) => setAmount(e.target.value)}
         />
 
+        <select
+          className={styles.chain}
+          value={chain}
+          onChange={(e) => setChain(e.target.value)}
+        >
+          <option name="Etherium"> Etherium</option>
+          <option name="Binance">Binance</option>
+          <option name="Tezos">Tezos</option>
+          <option name="Polygon">Polygon</option>
+        </select>
+
         {loading ? (
           <TailSpin
             height="60"
@@ -66,6 +78,9 @@ const Exchange = () => {
             className={styles.btn}
             onClick={() => {
               console.log("transfer");
+              console.log(address);
+              console.log(amount);
+              console.log(chain);
             }}
           >
             <span className="relative px-5 py-2.5 rounded-md ">Transfer</span>

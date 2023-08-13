@@ -7,7 +7,7 @@ import Card from "./Card";
 import Mouse from "../../Mouse";
 import Modal from "../../Modal";
 import Form from "../../Form";
-
+import { useRouter } from "next/router";
 const Range = dynamic(() => import("react-slider"), {
   ssr: false,
 });
@@ -26,6 +26,8 @@ const Hero = ({}: HeroProps) => {
   const [blink, setBlink] = useState<boolean>(false);
   const cardsRef = useRef<HTMLDivElement>(null);
 
+  const router = useRouter();
+
   useEffect(() => {
     if (!cardsRef.current) return;
     const cards = cardsRef.current;
@@ -33,8 +35,8 @@ const Hero = ({}: HeroProps) => {
     cards.scrollLeft = rangeValue;
   }, [rangeValue]);
 
-  const handleListForm = () => {
-    setVisibleModalSale(true);
+  const handleListForm = async () => {
+    router.push(`/exchange`);
   };
 
   return (
@@ -49,15 +51,7 @@ const Hero = ({}: HeroProps) => {
             className={cn("button", styles.button, styles.buttonDetails)}
             onClick={handleListForm}
           >
-            <p className={cn("button", styles.button)}>Listings</p>
-            <Modal
-              visible={visibleModalSale}
-              onClose={() => setVisibleModalSale(false)}
-              blink={blink}
-              form
-            >
-              <Form profile={undefined} />
-            </Modal>
+            <p className={styles.btnn}>Transfer</p>
           </button>
         </div>
         <div ref={cardsRef} className={styles.cards}>

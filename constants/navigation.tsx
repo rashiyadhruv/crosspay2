@@ -11,8 +11,8 @@ const NavigationList: NavigationType[] = [
     url: "/",
   },
   {
-    title: "Your Listings",
-    url: "/listings",
+    title: "Exchange",
+    url: "/exchange",
   },
   {
     title: "Biddings",
@@ -31,8 +31,8 @@ const NavigationListFooter: NavigationType[] = [
   },
 
   {
-    title: "Listings",
-    url: "/listings",
+    title: "Exchange",
+    url: "/exchange",
   },
   {
     title: "Dashboard",

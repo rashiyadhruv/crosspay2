@@ -1,12 +1,11 @@
 import React from "react";
-
+import styles from "./styles/Dashboard.module.sass";
 import Layout from "../components/Layout";
-import PageMarketplace from "../components/PageMarketplace";
 
 const marketplace = () => {
   return (
     <Layout>
-      <PageMarketplace typeofcontent="disqualified" />
+      <div className={styles.wrap}>History</div>
     </Layout>
   );
 };
