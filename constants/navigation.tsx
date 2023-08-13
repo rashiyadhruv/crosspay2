@@ -15,8 +15,8 @@ const NavigationList: NavigationType[] = [
     url: "/exchange",
   },
   {
-    title: "Biddings",
-    url: "/biddings",
+    title: "Dashboard",
+    url: "/dashboard",
   },
   // {
   //   title: "Download & Play",
